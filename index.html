@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>What's the weather?</h1>
+            <p>Get real-time weather information for any city</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Enter city name..." id="searchInput">
+            <button class="search-button" id="searchButton">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <div class="weather-card" id="weatherCard">
+            <div class="location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span id="locationName">--</span>
+            </div>
+            <div class="date" id="currentDate">--</div>
+            
+            <div class="current-weather">
+                <div>
+                    <div class="temperature" id="temperature">--°</div>
+                    <div class="weather-description" id="weatherDescription">--</div>
+                </div>
+                <div class="weather-icon" id="weatherIcon">
+                    <i class="fas fa-sun"></i>
+                </div>
+            </div>
+            
+            <div class="weather-details">
+                <div class="detail-card">
+                    <i class="fas fa-temperature-high"></i>
+                    <div class="detail-title">Feels Like</div>
+                    <div class="detail-value" id="feelsLike">--°</div>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-tint"></i>
+                    <div class="detail-title">Humidity</div>
+                    <div class="detail-value" id="humidity">--%</div>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-wind"></i>
+                    <div class="detail-title">Wind Speed</div>
+                    <div class="detail-value" id="windSpeed">-- km/h</div>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                    <div class="detail-title">Pressure</div>
+                    <div class="detail-value" id="pressure">-- hPa</div>
+                </div>
+            </div>
+            
+            <div class="forecast-container">
+                <h3 class="forecast-title">5-Day Forecast</h3>
+                <div class="forecast" id="forecast">
+                    <!-- Forecast items will be added dynamically -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="error-message" id="errorMessage">
+            City not found. Please try again.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
